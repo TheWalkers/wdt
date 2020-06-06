@@ -130,13 +130,13 @@ find_package(Threads) # this will set ${CMAKE_THREAD_LIBS_INIT} (ie pthreads)
 
 # double-conversion
 find_path(DOUBLECONV_INCLUDE_DIR double-conversion/double-conversion.h)
-find_library(DOUBLECONV_LIBRARY double-conversion)
+find_library(DOUBLECONV_LIBRARY NAMES libdouble-conversion.a)
 # Glog
 find_path(GLOG_INCLUDE_DIR glog/logging.h)
-find_library(GLOG_LIBRARY glog)
+find_library(GLOG_LIBRARY NAMES libglog.a)
 # Gflags
 find_path(GFLAGS_INCLUDE_DIR gflags/gflags.h)
-find_library(GFLAGS_LIBRARY gflags)
+find_library(GFLAGS_LIBRARY NAMES libgflags.a)
 # OpenSSL's crypto lib
 find_package(OpenSSL REQUIRED)
 include_directories(${OPENSSL_INCLUDE_DIR})
